@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shadow Dom</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="body">
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, cumque
+      expedita sint nobis error eius vel voluptate repellat eligendi numquam
+      dignissimos, commodi cum obcaecati quaerat fugit, deleniti doloribus sit?
+      Consectetur?
+    </p>
+    <div class="list-list">
+      <ul>
+        <li>list 1</li>
+        <li>list 2</li>
+        <li>list 3</li>
+      </ul>
+    </div>
+    <my-shadow>
+      <div slot="shadowHeader">
+        <p>This is from slot header</p>
+      </div>
+      <div slot="shadowContent">
+        <p>This is from slot</p>
+      </div>
+    </my-shadow>
+    <button>Outsite shadow dom button</button>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, cumque
+      expedita sint nobis error eius vel voluptate repellat eligendi numquam
+      dignissimos, commodi cum obcaecati quaerat fugit, deleniti doloribus sit?
+      Consectetur?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, cumque
+      expedita sint nobis error eius vel voluptate repellat eligendi numquam
+      dignissimos, commodi cum obcaecati quaerat fugit, deleniti doloribus sit?
+      Consectetur?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, cumque
+      expedita sint nobis error eius vel voluptate repellat eligendi numquam
+      dignissimos, commodi cum obcaecati quaerat fugit, deleniti doloribus sit?
+      Consectetur?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, cumque
+      expedita sint nobis error eius vel voluptate repellat eligendi numquam
+      dignissimos, commodi cum obcaecati quaerat fugit, deleniti doloribus sit?
+      Consectetur?
+    </p>
+    <script src="app.js"></script>
+  </body>
+</html>

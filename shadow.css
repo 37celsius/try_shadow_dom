@@ -1,0 +1,20 @@
+p {
+  color: black;
+}
+/* THIS ONLY FOR THE HOST SHADOW DOM, but not compatible for lots of browsers */
+:host {
+  all: initial;
+  --primary: yellow;
+  color: black;
+}
+
+:host-context(.border-yellow) {
+  border: 1px solid var(--primary);
+}
+
+.shadow-style {
+  color: red;
+}
+.shadow-style .shadow-style--green {
+  color: green;
+}

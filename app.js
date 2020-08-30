@@ -137,3 +137,8 @@ document
   .addEventListener("change", (event) => appendBooks(event.target.value));
 
 appendBooks("book-template-1");
+
+// One of the interesting things about templates is that they can conatin any HTML. That includes script and style elements.
+
+const buttonTemplate = document.getElementById("template-button");
+document.body.appendChild(document.importNode(buttonTemplate.content, true));

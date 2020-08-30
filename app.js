@@ -105,3 +105,35 @@ books.forEach((book) => {
   // Append the instance to the DOM
   document.getElementById("my-shadow-list").appendChild(instance);
 });
+
+/*
+  document.importNode method is a function that will create a copy of the template's content and prepare it to be inserted into another document (or document fragment). The first argument to the function grabs the template's content and the second agrument tells the browser to do a deep copy of the element's DOM subtree.
+
+  Example below:
+*/
+
+function appendBooks(templateId) {
+  const bookList = document.getElementById("books");
+  const fragment = document.getElementById(templateId);
+
+  // clear out the content from the ul
+  bookList.innerHTML = "";
+
+  // Loop over the books and modify the given template
+  books.forEach((book) => {
+    const instance = document.importNode(fragment.content, true);
+
+    // Add relevant content to the template
+    instance.querySelector(".title").innerHTML = book.title;
+    instance.querySelector(".author").innerHTML = book.author;
+
+    // Append the instance to the DOM
+    bookList.appendChild(instance);
+  });
+}
+
+document
+  .getElementById("templates")
+  .addEventListener("change", (event) => appendBooks(event.target.value));
+
+appendBooks("book-template-1");

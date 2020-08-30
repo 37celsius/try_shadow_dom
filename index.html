@@ -55,8 +55,33 @@
       dignissimos, commodi cum obcaecati quaerat fugit, deleniti doloribus sit?
       Consectetur?
     </p>
+
+    <ul id="books"></ul>
+    <fieldset id="templates">
+      <legend>Choose template</legend>
+      <label>
+        <input type="radio" name="template" value="book-template-1" checked />
+        Template One
+      </label>
+      <label>
+        <input type="radio" name="template" value="book-template-2" />
+        Template Two
+      </label>
+    </fieldset>
+
     <template id="my-shadow-list-template">
       <li><span class="title"></span> &mdash; <span class="author"></span></li>
+    </template>
+
+    <template id="book-template-1">
+      <li><span class="title"></span> &mdash; <span class="author"></span></li>
+    </template>
+
+    <template id="book-template-2">
+      <li>
+        <span class="author"></span>'s classic novel &mdash;
+        <span class="title"></span>
+      </li>
     </template>
     <script src="app.js"></script>
   </body>

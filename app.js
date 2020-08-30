@@ -1,4 +1,7 @@
 /*
+Use Polyfills for older browser:
+https://github.com/webcomponents/polyfills/tree/master/packages/webcomponentsjs
+
 2 Types: 
 - Autonomouse custom element <myelement></myelement>
 - Customized built-in elements
@@ -79,3 +82,26 @@ class Myshadow extends HTMLElement {
 }
 
 customElements.define("my-shadow", Myshadow);
+
+const MyShadowDiv = document.getElementById("my-shadow-host");
+const MyShadowRootDiv = MyShadowDiv.attachShadow({ mode: "open" });
+MyShadowRootDiv.innerHTML = `This is from app.js This is from the HTML using slot --> <slot></slot>`;
+
+const fragment = document.getElementById("my-shadow-list-template");
+const books = [
+  { title: "The Great Gatsby", author: "F. Scott Fitzgerald" },
+  { title: "A Farewell to Arms", author: "Ernest Hemingway" },
+  { title: "Catch 22", author: "Joseph Heller" },
+];
+
+books.forEach((book) => {
+  // Create an instance of the template content
+  const instance = document.importNode(fragment.content, true);
+
+  // Add relevant content to the template
+  instance.querySelector(".title").innerHTML = book.title;
+  instance.querySelector(".author").innerHTML = book.author;
+
+  // Append the instance to the DOM
+  document.getElementById("my-shadow-list").appendChild(instance);
+});

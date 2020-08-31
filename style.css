@@ -7,7 +7,9 @@ button {
   background-color: red;
 }
 
-#launch-dialog {
+#launch-dialog,
+#launch-new-dialog,
+#launch-new-dialog-with-template {
   background: tomato;
   border-radius: 4px;
   color: #fff;
